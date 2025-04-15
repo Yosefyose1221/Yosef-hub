@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yossif's Hub - Aviator Predictor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px 0;
+      text-align: center;
+      width: 100%;
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 600;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #0ff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    section {
+      display: none;
+      padding: 60px 20px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      max-width: 800px;
+      margin-top: 20px;
+    }
+    section.active {
+      display: block;
+    }
+    button {
+      background: #0ff;
+      border: none;
+      padding: 12px 24px;
+      margin-top: 20px;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #fff;
+    }
+    footer {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      margin-top: 40px;
+      width: 100%;
+    }
+    #aviator-result {
+      font-size: 32px;
+      margin-top: 20px;
+      color: #0f0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Yossif's Hub</h1>
+    <nav>
+      <a onclick="showSection('about')">About</a>
+      <a onclick="showSection('services')">Services</a>
+      <a onclick="showSection('game')">Game</a>
+      <a onclick="showSection('contact')">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi, I'm Yossif. I create content about sports, music, and online business. Welcome to my world!</p>
+
+    <h3>What is Aviator Forecast?</h3>
+    <p>
+      Aviator Forecast is a fun tool that shows random predictions for the popular game called <strong>Aviator</strong>.
+      In the Aviator game, a plane takes off and the multiplier (like 1.5x, 2.7x, etc.) increases as the plane flies.
+      You must cash out before the plane flies away, or you lose your bet!
+    </p>
+    <p>
+      The Aviator Forecast on this site gives <strong>simulated predictions</strong>. It uses a random number generator to show possible multipliers.
+      It's just for entertainment — it doesn't predict real game results.
+    </p>
+
+    <video controls width="100%">
+      <source src="your-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section id="services">
+    <h2>My Services</h2>
+    <p>I build websites, design content, and develop smart apps like Crypto Sense.</p>
+  </section>
+
+  <section id="game">
+    <h2>Aviator Predictor</h2>
+    <p>Click the button to get a random Aviator forecast multiplier.</p>
+    <button onclick="predictAviator()">Predict Now</button>
+    <div id="aviator-result"></div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: yossif@email.com</p>
+    <p>Instagram: @yossif</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Yossif. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+    showSection('about');
+
+    function predictAviator() {
+      const multiplier = (Math.random() * (20 - 1.1) + 1.1).toFixed(2);
+      const resultDiv = document.getElementById('aviator-result');
+      resultDiv.textContent = `Next Multiplier: ${multiplier}x`;
+    }
+  </script>
+</body>
+</html>
